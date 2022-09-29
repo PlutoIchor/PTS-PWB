@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ATMController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/cek_saldo', [ATMController::class, 'cek_saldo']);
+Route::get('/tarik_tunai', [ATMController::class, 'tarik_tunai']);
+Route::get('/pembayaran', [ATMController::class, 'pembayaran']);
+Route::get('/transfer', [ATMController::class, 'transfer']);
